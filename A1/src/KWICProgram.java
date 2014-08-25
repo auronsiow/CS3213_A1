@@ -51,11 +51,14 @@ public class KWICProgram {
 			// Generate Circular lines
 			
 			// Sort Circular lines alphabetically
+			KWICLineSort kwic_Sort = new KWICLineSort();
+			ll_LinesToCheck = kwic_Sort.sortByAlphabet(ll_LinesToCheck);
 			
 			// Remove illegal keywords found
 			
 			// Display output
-			
+			printKWICOutput(ll_LinesToCheck);
+
 			// Get user's feedback to exit or replay
 			System.out.println(PROMPT_REPLAY_KEY + REPLAY_KEY + PROMPT_TERMINATE_KEY);
 			if(!sc.nextLine().contains(REPLAY_KEY))
