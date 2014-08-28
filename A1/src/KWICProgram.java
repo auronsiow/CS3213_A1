@@ -12,7 +12,7 @@ import java.io.*;
 public class KWICProgram {	
 
 	public static final String REPLAY_KEY = "y";
-	public static final String WELCOME_TEXT_FILE_PATH = "src/other_resources/help.txt";
+	public static final String WELCOME_TEXT_FILE_PATH = "other_resources/help.txt";
 	public static final String PROMPT_TERMINATION = "---Thank you for using KWIC---";
 	public static final String PROMPT_NUM_LINES = "Enter number of lines: ";
 	public static final String PROMPT_ILLEGAL_WORDS = "Enter illegal words: ";
