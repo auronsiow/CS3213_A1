@@ -27,6 +27,7 @@ public class KWICProgram {
 		
 		while (true) {
 			LinkedList<String> ll_LinesToCheck = new LinkedList<String>();
+			LinkedList<String> ll_IllegalKeywordList = new LinkedList<String>();
 			
 			// Get # of lines of text
 			System.out.print(PROMPT_NUM_LINES);
@@ -46,15 +47,21 @@ public class KWICProgram {
 			System.out.print(PROMPT_ILLEGAL_WORDS);
 			String str_inputIllegal = sc.nextLine();
 			
-			// Store input
+			StringTokenizer st = new StringTokenizer(str_inputIllegal);
+			while(st.hasMoreTokens())
+				ll_IllegalKeywordList.add(st.nextToken().toLowerCase());
 			
 			// Generate Circular lines
+			CircularGenerator f_Circular = new CircularGenerator();
+			ll_LinesToCheck = f_Circular.process(ll_LinesToCheck);
 			
 			// Sort Circular lines alphabetically
 			AlphabetSort f_Sort = new AlphabetSort();
 			ll_LinesToCheck = f_Sort.process(ll_LinesToCheck);
 			
 			// Remove illegal keywords found
+			IllegalWordFilter f_Illegal = new IllegalWordFilter(ll_IllegalKeywordList);
+			ll_LinesToCheck = f_Illegal.process(ll_LinesToCheck);
 			
 			// Display output
 			printKWICOutput(ll_LinesToCheck);
