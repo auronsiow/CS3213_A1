@@ -51,8 +51,8 @@ public class KWICProgram {
 			// Generate Circular lines
 			
 			// Sort Circular lines alphabetically
-			KWICLineSort kwic_Sort = new KWICLineSort();
-			ll_LinesToCheck = kwic_Sort.sortByAlphabet(ll_LinesToCheck);
+			AlphabetSort f_Sort = new AlphabetSort();
+			ll_LinesToCheck = f_Sort.process(ll_LinesToCheck);
 			
 			// Remove illegal keywords found
 			
