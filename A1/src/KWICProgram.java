@@ -35,16 +35,10 @@ public class KWICProgram {
 			getUserInput(sc, ll_LinesToCheck, ll_IllegalKeywordList);
 			
 			// Generate Circular lines
-			CircularGenerator f_Circular = new CircularGenerator();
-			ll_LinesToCheck = f_Circular.process(ll_LinesToCheck);
 			
 			// Sort Circular lines alphabetically
-			AlphabetSort f_Sort = new AlphabetSort();
-			ll_LinesToCheck = f_Sort.process(ll_LinesToCheck);
 			
 			// Remove illegal keywords found
-			IllegalWordFilter f_Illegal = new IllegalWordFilter(ll_IllegalKeywordList);
-			ll_LinesToCheck = f_Illegal.process(ll_LinesToCheck);
 			
 			// Display output
 			printKWICOutput(ll_LinesToCheck);
